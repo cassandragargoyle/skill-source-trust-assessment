@@ -12,3 +12,7 @@ All notable changes to the skill and its methodology. The methodology version is
 - `assessment.schema.json`, template and SKOS vocabulary.
 - `validate_assessment.py` validator (standard library only) with tests.
 - ADR-001 (Admiralty Code instead of a weighted score), ADR-002 (core and profiles, repository layout).
+
+### Changed
+
+- `SKILL.md` description lists example trigger phrases in Czech; a new rule asks for the summary and free-text fields in the user's language (codes and quotes unchanged).

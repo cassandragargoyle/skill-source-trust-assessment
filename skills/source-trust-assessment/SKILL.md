@@ -7,6 +7,8 @@ description: >
   profiles (e.g. Czech Republic, EU, BIM). Use when verifying regulations, standards,
   official documents, articles or AI-generated claims before relying on them, when
   asked how trustworthy a source is, or when attributing claims to their sources.
+  Works in any language (e.g. "ověř tento zdroj", "jak důvěryhodný je tento dokument",
+  "odkud pochází toto tvrzení").
 license: MIT
 metadata:
   author: CassandraGargoyle
@@ -44,4 +46,5 @@ Assess a source, a document or a claim and return a structured, reproducible res
 - Bindingness comes only from the official version of a legal act; everything else has `legalAuthority: "none"`.
 - An obligation may only be derived from information with credibility 1.
 - Do not bypass access controls (login walls, bot protection). Record the blocked source in `unresolved` and suggest manual retrieval.
+- Write the plain-language summary and free-text fields in the user's language. Codes, field names and enum values stay in English as defined; quotes stay verbatim in the language of the source.
 - State the methodology version and profiles used. If you deviate from the methodology, set `methodology.modified: true` and explain it.
