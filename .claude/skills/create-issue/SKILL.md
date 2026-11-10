@@ -4,6 +4,8 @@ description: 'Založení nového issue metodou GitHub-first — nejdřív vznikn
 argument-hint: [krátký popis issue]
 allowed-tools: Read, Glob, Grep, Bash, AskUserQuestion, Write, Edit
 user-invocable: true
+metadata:
+  internal: true
 ---
 
 # Založení issue (GitHub-first)

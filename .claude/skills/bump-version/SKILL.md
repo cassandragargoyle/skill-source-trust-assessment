@@ -2,6 +2,8 @@
 name: bump-version
 description: 'Bump the skill version and/or the methodology version of source-trust-assessment (patch/minor/major), keeping SKILL.md metadata, methodology.md header, schema $id, template, profiles, fixtures, READMEs and CHANGELOG in sync. Use when the user wants to bump, raise, release or change a version (e.g. "zvedni verzi metodiky", "bump skill version", "nová patch verze skillu"). User-invocable via /bump-version.'
 disable-model-invocation: false
+metadata:
+  internal: true
 ---
 
 # Bump Version

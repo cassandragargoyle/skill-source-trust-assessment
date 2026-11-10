@@ -3,6 +3,8 @@ name: finish-branch
 description: 'Finish work on a feature branch — tests, README/CHANGELOG/version check, merge into the main branch, branch clean-up and optional issue status update. Use when the user wants to finish, merge or close a feature branch. Examples: "finish the branch", "/finish-branch", "merge the feature branch into main", "dokonči branch".'
 allowed-tools: Read, Glob, Grep, Bash, AskUserQuestion, Edit
 user-invocable: true
+metadata:
+  internal: true
 ---
 
 # Finish a feature branch

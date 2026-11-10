@@ -4,6 +4,8 @@ description: 'Guide for implementing an issue — from reading the assignment th
 argument-hint: [issue name or ID]
 allowed-tools: Read, Write, Edit, Glob, Grep, Bash
 user-invocable: true
+metadata:
+  internal: true
 ---
 
 # Implement an issue
