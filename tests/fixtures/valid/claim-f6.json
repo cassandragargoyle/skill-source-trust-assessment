@@ -1,0 +1,47 @@
+{
+  "subject": {
+    "level": "claim",
+    "title": "BACS threshold claim in an AI answer",
+    "text": "Non-residential buildings with heating, cooling or ventilation above 70 kW must have building automation by the end of 2029.",
+    "retrievedAt": "2026-11-10"
+  },
+  "context": {
+    "region": "cz",
+    "domain": "bim",
+    "purpose": "Checking AI output against its cited sources"
+  },
+  "trust": {
+    "sourceReliability": "F",
+    "informationCredibility": 6,
+    "code": "F6",
+    "legalAuthority": "none",
+    "legalStatus": "n/a",
+    "verificationStatus": "unverified",
+    "assessedBy": "ai",
+    "assessor": null,
+    "assessedAt": "2026-11-10",
+    "derivedFrom": null,
+    "rationale": "None of the sources cited by the AI answer contains the claim (rule 4). Probably Directive (EU) 2024/1275 Art. 13; to be verified in EUR-Lex."
+  },
+  "evidence": [],
+  "criteria": [
+    {
+      "criterion": "traceability",
+      "finding": "The cited article does not contain the figures.",
+      "evidence": []
+    }
+  ],
+  "unresolved": [
+    "Verify the claim in the official text of Directive (EU) 2024/1275 in EUR-Lex."
+  ],
+  "methodology": {
+    "id": "source-trust-assessment",
+    "version": "0.1.0",
+    "profiles": [
+      "cz",
+      "eu",
+      "bim"
+    ],
+    "modified": false
+  }
+}

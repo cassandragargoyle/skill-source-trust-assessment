@@ -1,0 +1,156 @@
+# Source Trust Assessment vocabulary – code lists of references/methodology.md as SKOS.
+# Single source of truth for codes and their labels; add a language by adding labels,
+# add a code only together with the methodology.
+
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dqv:     <http://www.w3.org/ns/dqv#> .
+@prefix sta:     <https://github.com/CassandraGargoyle/skill-source-trust-assessment/vocab#> .
+
+# --------------------------------------------------------------------------- dimensions (DQV)
+
+sta:trust a dqv:Category ;
+    skos:prefLabel "Trust"@en, "Důvěryhodnost"@cs ;
+    rdfs:seeAlso <../references/methodology.md> .
+
+sta:sourceReliability a dqv:Dimension ;
+    dqv:inCategory sta:trust ;
+    skos:prefLabel "Source reliability"@en, "Spolehlivost zdroje"@cs ;
+    skos:definition "Reliability of the originator of the information (Admiralty Code A–F)."@en .
+
+sta:informationCredibility a dqv:Dimension ;
+    dqv:inCategory sta:trust ;
+    skos:prefLabel "Information credibility"@en, "Věrohodnost informace"@cs ;
+    skos:definition "Credibility of the specific information (Admiralty Code 1–6)."@en .
+
+sta:legalAuthorityDimension a dqv:Dimension ;
+    dqv:inCategory sta:trust ;
+    skos:prefLabel "Legal authority"@en, "Právní autorita"@cs ;
+    skos:definition "Legal force of the content."@en .
+
+# --------------------------------------------------------------------------- source reliability A–F
+
+sta:sourceReliabilityScheme a skos:ConceptScheme ;
+    skos:prefLabel "Source reliability (Admiralty Code)"@en, "Spolehlivost zdroje (Admiralty Code)"@cs ;
+    dcterms:source "NATO STANAG 2511, AJP-2.1" .
+
+sta:rel-A a skos:Concept ; skos:inScheme sta:sourceReliabilityScheme ; skos:notation "A" ;
+    skos:prefLabel "completely reliable"@en, "zcela spolehlivý"@cs .
+sta:rel-B a skos:Concept ; skos:inScheme sta:sourceReliabilityScheme ; skos:notation "B" ;
+    skos:prefLabel "usually reliable"@en, "obvykle spolehlivý"@cs .
+sta:rel-C a skos:Concept ; skos:inScheme sta:sourceReliabilityScheme ; skos:notation "C" ;
+    skos:prefLabel "fairly reliable"@en, "poměrně spolehlivý"@cs .
+sta:rel-D a skos:Concept ; skos:inScheme sta:sourceReliabilityScheme ; skos:notation "D" ;
+    skos:prefLabel "not usually reliable"@en, "obvykle nespolehlivý"@cs .
+sta:rel-E a skos:Concept ; skos:inScheme sta:sourceReliabilityScheme ; skos:notation "E" ;
+    skos:prefLabel "unreliable"@en, "nespolehlivý"@cs .
+sta:rel-F a skos:Concept ; skos:inScheme sta:sourceReliabilityScheme ; skos:notation "F" ;
+    skos:prefLabel "reliability cannot be judged"@en, "spolehlivost nelze posoudit"@cs ;
+    skos:scopeNote "Unknown, not worst."@en .
+
+# --------------------------------------------------------------------------- information credibility 1–6
+
+sta:informationCredibilityScheme a skos:ConceptScheme ;
+    skos:prefLabel "Information credibility (Admiralty Code)"@en, "Věrohodnost informace (Admiralty Code)"@cs ;
+    dcterms:source "NATO STANAG 2511, AJP-2.1" .
+
+sta:cred-1 a skos:Concept ; skos:inScheme sta:informationCredibilityScheme ; skos:notation "1" ;
+    skos:prefLabel "confirmed"@en, "potvrzená"@cs .
+sta:cred-2 a skos:Concept ; skos:inScheme sta:informationCredibilityScheme ; skos:notation "2" ;
+    skos:prefLabel "probably true"@en, "pravděpodobně pravdivá"@cs .
+sta:cred-3 a skos:Concept ; skos:inScheme sta:informationCredibilityScheme ; skos:notation "3" ;
+    skos:prefLabel "possibly true"@en, "možná pravdivá"@cs .
+sta:cred-4 a skos:Concept ; skos:inScheme sta:informationCredibilityScheme ; skos:notation "4" ;
+    skos:prefLabel "doubtful"@en, "pochybná"@cs .
+sta:cred-5 a skos:Concept ; skos:inScheme sta:informationCredibilityScheme ; skos:notation "5" ;
+    skos:prefLabel "improbable"@en, "nepravděpodobná"@cs .
+sta:cred-6 a skos:Concept ; skos:inScheme sta:informationCredibilityScheme ; skos:notation "6" ;
+    skos:prefLabel "truth cannot be judged"@en, "nelze posoudit"@cs ;
+    skos:scopeNote "Unknown, not worst."@en .
+
+# --------------------------------------------------------------------------- legal authority
+
+sta:legalAuthorityScheme a skos:ConceptScheme ;
+    skos:prefLabel "Legal authority"@en, "Právní autorita"@cs ;
+    skos:scopeNote "Order of precedence is defined by jurisdiction profiles."@en .
+
+sta:auth-constitutional a skos:Concept ; skos:inScheme sta:legalAuthorityScheme ; skos:notation "constitutional" ;
+    skos:prefLabel "constitutional law"@en, "ústavní pořádek"@cs .
+sta:auth-international a skos:Concept ; skos:inScheme sta:legalAuthorityScheme ; skos:notation "international" ;
+    skos:prefLabel "international treaty"@en, "mezinárodní smlouva"@cs .
+sta:auth-eu a skos:Concept ; skos:inScheme sta:legalAuthorityScheme ; skos:notation "eu" ;
+    skos:prefLabel "EU law"@en, "právo EU"@cs .
+sta:auth-statutory a skos:Concept ; skos:inScheme sta:legalAuthorityScheme ; skos:notation "statutory" ;
+    skos:prefLabel "statute"@en, "zákon"@cs .
+sta:auth-secondary a skos:Concept ; skos:inScheme sta:legalAuthorityScheme ; skos:notation "secondary" ;
+    skos:prefLabel "secondary legislation"@en, "podzákonný předpis"@cs .
+sta:auth-case-law a skos:Concept ; skos:inScheme sta:legalAuthorityScheme ; skos:notation "case-law" ;
+    skos:prefLabel "case law"@en, "judikatura"@cs .
+sta:auth-guidance a skos:Concept ; skos:inScheme sta:legalAuthorityScheme ; skos:notation "guidance" ;
+    skos:prefLabel "guidance and standards"@en, "metodiky a normy"@cs .
+sta:auth-none a skos:Concept ; skos:inScheme sta:legalAuthorityScheme ; skos:notation "none" ;
+    skos:prefLabel "no legal authority"@en, "bez právní autority"@cs .
+
+# --------------------------------------------------------------------------- legal status
+
+sta:legalStatusScheme a skos:ConceptScheme ;
+    skos:prefLabel "Legal status"@en, "Stav předpisu"@cs .
+
+sta:status-in-force a skos:Concept ; skos:inScheme sta:legalStatusScheme ; skos:notation "in-force" ;
+    skos:prefLabel "in force"@en, "platné"@cs .
+sta:status-draft a skos:Concept ; skos:inScheme sta:legalStatusScheme ; skos:notation "draft" ;
+    skos:prefLabel "draft"@en, "návrh"@cs .
+sta:status-repealed a skos:Concept ; skos:inScheme sta:legalStatusScheme ; skos:notation "repealed" ;
+    skos:prefLabel "repealed or outdated"@en, "zrušené nebo neaktuální"@cs .
+sta:status-n-a a skos:Concept ; skos:inScheme sta:legalStatusScheme ; skos:notation "n/a" ;
+    skos:prefLabel "not a legal act"@en, "nejde o předpis"@cs .
+
+# --------------------------------------------------------------------------- verification status
+
+sta:verificationStatusScheme a skos:ConceptScheme ;
+    skos:prefLabel "Verification status"@en, "Stav ověření"@cs .
+
+sta:verif-verified a skos:Concept ; skos:inScheme sta:verificationStatusScheme ; skos:notation "verified" ;
+    skos:prefLabel "verified"@en, "ověřeno"@cs .
+sta:verif-unverified a skos:Concept ; skos:inScheme sta:verificationStatusScheme ; skos:notation "unverified" ;
+    skos:prefLabel "unverified"@en, "neověřeno"@cs .
+sta:verif-disputed a skos:Concept ; skos:inScheme sta:verificationStatusScheme ; skos:notation "disputed" ;
+    skos:prefLabel "disputed"@en, "sporné"@cs .
+
+# --------------------------------------------------------------------------- assessed by
+
+sta:assessedByScheme a skos:ConceptScheme ;
+    skos:prefLabel "Assessed by"@en, "Kdo hodnotil"@cs .
+
+sta:assessor-human a skos:Concept ; skos:inScheme sta:assessedByScheme ; skos:notation "human" ;
+    skos:prefLabel "person"@en, "člověk"@cs .
+sta:assessor-expert a skos:Concept ; skos:inScheme sta:assessedByScheme ; skos:notation "expert" ;
+    skos:prefLabel "domain expert"@en, "odborník"@cs .
+sta:assessor-certified-expert a skos:Concept ; skos:inScheme sta:assessedByScheme ; skos:notation "certified-expert" ;
+    skos:prefLabel "certified expert"@en, "certifikovaný odborník"@cs ;
+    skos:scopeNote "Recognised authorizations are listed in jurisdiction profiles."@en .
+sta:assessor-ai a skos:Concept ; skos:inScheme sta:assessedByScheme ; skos:notation "ai" ;
+    skos:prefLabel "AI"@en, "AI"@cs .
+sta:assessor-ai-human a skos:Concept ; skos:inScheme sta:assessedByScheme ; skos:notation "ai+human" ;
+    skos:prefLabel "AI reviewed by a person"@en, "AI zkontrolovaná člověkem"@cs .
+sta:assessor-ai-expert a skos:Concept ; skos:inScheme sta:assessedByScheme ; skos:notation "ai+expert" ;
+    skos:prefLabel "AI reviewed by an expert"@en, "AI zkontrolovaná odborníkem"@cs .
+sta:assessor-ai-certified-expert a skos:Concept ; skos:inScheme sta:assessedByScheme ; skos:notation "ai+certified-expert" ;
+    skos:prefLabel "AI reviewed by a certified expert"@en, "AI zkontrolovaná certifikovaným odborníkem"@cs .
+
+# --------------------------------------------------------------------------- profiles
+
+sta:profileScheme a skos:ConceptScheme ;
+    skos:prefLabel "Trust assessment profiles"@en, "Profily hodnocení důvěryhodnosti"@cs .
+
+sta:profile-cz a skos:Concept ; skos:inScheme sta:profileScheme ; skos:notation "cz" ;
+    skos:prefLabel "Czech Republic"@en, "Česká republika"@cs ;
+    rdfs:seeAlso <../references/profiles/regions/cz.md> .
+sta:profile-eu a skos:Concept ; skos:inScheme sta:profileScheme ; skos:notation "eu" ;
+    skos:prefLabel "European Union"@en, "Evropská unie"@cs ;
+    rdfs:seeAlso <../references/profiles/regions/eu.md> .
+sta:profile-bim a skos:Concept ; skos:inScheme sta:profileScheme ; skos:notation "bim" ;
+    skos:prefLabel "Building Information Modelling"@en, "Informační modelování staveb (BIM)"@cs ;
+    rdfs:seeAlso <../references/profiles/domains/bim.md> .

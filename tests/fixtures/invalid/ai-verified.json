@@ -1,0 +1,70 @@
+{
+  "subject": {
+    "level": "document",
+    "title": "Zákon č. 406/2000 Sb., o hospodaření energií",
+    "url": "https://e-sbirka.gov.cz/eli/cz/sb/2000/406",
+    "publisher": "Česká republika (e-Sbírka)",
+    "version": "znění účinné k 2026-11-10",
+    "retrievedAt": "2026-11-10"
+  },
+  "context": {
+    "region": "cz",
+    "domain": null,
+    "purpose": "Ověření povinnosti energetického auditu"
+  },
+  "trust": {
+    "sourceReliability": "A",
+    "informationCredibility": 1,
+    "code": "A1",
+    "legalAuthority": "statutory",
+    "legalStatus": "in-force",
+    "verificationStatus": "verified",
+    "assessedBy": "ai",
+    "assessor": null,
+    "assessedAt": "2026-11-10",
+    "derivedFrom": null,
+    "rationale": "Oficiální znění zákona v e-Sbírce (profil cz, místní pravidlo 1)."
+  },
+  "evidence": [
+    {
+      "url": "https://e-sbirka.gov.cz/eli/cz/sb/2000/406",
+      "title": "e-Sbírka – zákon č. 406/2000 Sb.",
+      "quote": "",
+      "relation": "confirms",
+      "retrievedAt": "2026-11-10"
+    }
+  ],
+  "criteria": [
+    {
+      "criterion": "authority",
+      "finding": "Zákon vydaný Parlamentem ČR.",
+      "evidence": [
+        0
+      ]
+    },
+    {
+      "criterion": "authenticity",
+      "finding": "Oficiální znění v e-Sbírce.",
+      "evidence": [
+        0
+      ]
+    },
+    {
+      "criterion": "currency",
+      "finding": "Znění účinné k datu posouzení; probíhá novela (transpozice EPBD).",
+      "evidence": [
+        0
+      ]
+    }
+  ],
+  "unresolved": [],
+  "methodology": {
+    "id": "source-trust-assessment",
+    "version": "0.1.0",
+    "repository": "CassandraGargoyle/skill-source-trust-assessment",
+    "profiles": [
+      "cz"
+    ],
+    "modified": false
+  }
+}

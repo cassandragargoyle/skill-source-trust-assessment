@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/CassandraGargoyle/skill-source-trust-assessment/schemas/assessment-0.1.0.json",
+  "title": "Source trust assessment",
+  "description": "Result of an assessment under the source-trust-assessment methodology 0.1.0.",
+  "type": "object",
+  "required": ["subject", "context", "trust", "evidence", "methodology"],
+  "additionalProperties": false,
+  "properties": {
+    "subject": {
+      "type": "object",
+      "required": ["level", "title"],
+      "additionalProperties": false,
+      "properties": {
+        "level": { "enum": ["publisher", "document", "claim"] },
+        "title": { "type": "string", "minLength": 1 },
+        "url": { "type": "string" },
+        "text": { "type": "string", "description": "Verbatim text of the claim (level = claim)." },
+        "publisher": { "type": "string" },
+        "published": { "type": "string" },
+        "version": { "type": "string" },
+        "retrievedAt": { "type": "string" }
+      }
+    },
+    "context": {
+      "type": "object",
+      "required": ["region"],
+      "additionalProperties": false,
+      "properties": {
+        "region": { "type": "string", "description": "Region profile id, e.g. cz." },
+        "domain": { "type": ["string", "null"], "description": "Domain profile id, e.g. bim." },
+        "purpose": { "type": "string" }
+      }
+    },
+    "trust": {
+      "type": "object",
+      "required": ["sourceReliability", "informationCredibility", "code", "legalAuthority", "legalStatus",
+                   "verificationStatus", "assessedBy", "assessedAt", "rationale"],
+      "additionalProperties": false,
+      "properties": {
+        "sourceReliability": { "enum": ["A", "B", "C", "D", "E", "F"] },
+        "informationCredibility": { "enum": [1, 2, 3, 4, 5, 6] },
+        "code": { "type": "string", "pattern": "^[A-F][1-6]$" },
+        "legalAuthority": { "enum": ["constitutional", "international", "eu", "statutory", "secondary", "case-law", "guidance", "none"] },
+        "legalStatus": { "enum": ["in-force", "draft", "repealed", "n/a"] },
+        "verificationStatus": { "enum": ["verified", "unverified", "disputed"] },
+        "assessedBy": { "enum": ["human", "expert", "certified-expert", "ai", "ai+human", "ai+expert", "ai+certified-expert"] },
+        "assessor": {
+          "type": ["object", "null"],
+          "additionalProperties": false,
+          "properties": {
+            "name": { "type": "string" },
+            "authorization": { "type": "string" },
+            "field": { "type": "string" }
+          }
+        },
+        "assessedAt": { "type": "string" },
+        "derivedFrom": { "type": ["string", "null"] },
+        "rationale": { "type": "string", "minLength": 1 }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["url", "relation"],
+        "additionalProperties": false,
+        "properties": {
+          "url": { "type": "string" },
+          "title": { "type": "string" },
+          "quote": { "type": "string" },
+          "relation": { "enum": ["confirms", "partially-confirms", "contradicts", "context"] },
+          "retrievedAt": { "type": "string" }
+        }
+      }
+    },
+    "criteria": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["criterion", "finding"],
+        "additionalProperties": false,
+        "properties": {
+          "criterion": { "enum": ["authority", "authenticity", "currency", "accuracy", "independence", "traceability", "relevance"] },
+          "finding": { "type": "string" },
+          "evidence": { "type": "array", "items": { "type": "integer", "minimum": 0 } }
+        }
+      }
+    },
+    "unresolved": { "type": "array", "items": { "type": "string" } },
+    "methodology": {
+      "type": "object",
+      "required": ["id", "version", "modified"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "const": "source-trust-assessment" },
+        "version": { "type": "string" },
+        "repository": { "type": "string" },
+        "commit": { "type": "string" },
+        "profiles": { "type": "array", "items": { "type": "string" } },
+        "modified": { "type": "boolean" },
+        "modifications": { "type": "string" }
+      }
+    }
+  }
+}
