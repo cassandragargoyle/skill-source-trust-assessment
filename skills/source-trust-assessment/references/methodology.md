@@ -1,6 +1,6 @@
 # Source Trust Assessment Methodology
 
-Version 0.1.0 · normative core · jurisdiction-neutral
+Version 0.1.1 · normative core · jurisdiction-neutral
 
 This document defines the dimensions, codes and general rules of the assessment. How the codes apply in a particular region or domain (legal hierarchy, typical institutions, authorizations, local examples) is defined by **profiles** in [profiles/](profiles/). Codes and multilingual labels are also published as a SKOS vocabulary in [../assets/vocabulary.ttl](../assets/vocabulary.ttl).
 
@@ -106,6 +106,17 @@ The criteria below structure the evidence that leads to the codes. They are reco
 | `relevance` | Does it apply to the region, domain and purpose? | context (not trust itself) |
 
 Each finding: `{ "criterion": "...", "finding": "...", "evidence": [<indexes into evidence>] }`.
+
+Each evidence item stores the URL, a verbatim quote in the language of the source and its `relation` to the assessed subject:
+
+| `relation` | Meaning |
+| ---------- | ------- |
+| `confirms` | the source supports the subject as stated |
+| `partially-confirms` | the source supports only part of it, or with conditions or exceptions |
+| `contradicts` | the source states the opposite or something incompatible |
+| `context` | the source neither confirms nor contradicts, but is needed to understand or locate the subject |
+
+Credibility 1 needs at least one `confirms` item (rule 4 in § 6).
 
 ## 5. Verification and provenance
 

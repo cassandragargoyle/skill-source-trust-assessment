@@ -7,7 +7,7 @@
 - **Repozitář**: `skill-source-trust-assessment`
 - **Název skillu**: `source-trust-assessment`
 - **Formát**: [Agent Skill](https://agentskills.io/specification) (`SKILL.md`) – Claude Code, Codex a další agenti
-- **Stav**: počáteční (metodika 0.1.0)
+- **Stav**: počáteční (metodika 0.1.1)
 
 Open-source Agent Skill pro posouzení důvěryhodnosti informačních zdrojů na základě důkazů, napříč regiony, obory a typy zdrojů.
 

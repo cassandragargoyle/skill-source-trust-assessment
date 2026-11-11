@@ -1,6 +1,6 @@
 # Profil `cz` – Česká republika
 
-Profil k [metodice](../../methodology.md) verze 0.1.0. Upřesňuje, jak se její kódy použijí v českém právním prostředí. Kódy ani jejich význam nemění. Právo EU popisuje [profil `eu`](eu.md).
+Profil k [metodice](../../methodology.md) verze 0.1.1. Upřesňuje, jak se její kódy použijí v českém právním prostředí. Kódy ani jejich význam nemění. Právo EU popisuje [profil `eu`](eu.md).
 
 Hodnocení podle tohoto profilu má `"context": { "region": "cz" }`.
 

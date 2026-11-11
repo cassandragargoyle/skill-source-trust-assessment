@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/CassandraGargoyle/skill-source-trust-assessment/schemas/assessment-0.1.0.json",
+  "$id": "https://github.com/CassandraGargoyle/skill-source-trust-assessment/schemas/assessment-0.1.1.json",
   "title": "Source trust assessment",
-  "description": "Result of an assessment under the source-trust-assessment methodology 0.1.0.",
+  "description": "Result of an assessment under the source-trust-assessment methodology 0.1.1.",
   "type": "object",
   "required": ["subject", "context", "trust", "evidence", "methodology"],
   "additionalProperties": false,

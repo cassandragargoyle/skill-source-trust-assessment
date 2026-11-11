@@ -7,7 +7,7 @@
 - **Repository**: `skill-source-trust-assessment`
 - **Skill name**: `source-trust-assessment`
 - **Format**: [Agent Skill](https://agentskills.io/specification) (`SKILL.md`) – Claude Code, Codex and other agents
-- **Status**: Early (methodology 0.1.0)
+- **Status**: Early (methodology 0.1.1)
 
 Open-source Agent Skill for evidence-based assessment of information source trustworthiness across regions, domains, and source types.
 

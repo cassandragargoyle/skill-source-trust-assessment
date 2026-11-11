@@ -4,6 +4,18 @@ All notable changes to the skill and its methodology. The methodology version is
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-11-11
+
+Methodology 0.1.1.
+
+### Changed
+
+- Evidence `relation` codes (`confirms`, `partially-confirms`, `contradicts`, `context`) are now defined in the methodology (§ 4) and the vocabulary; `SKILL.md` step 4 uses them instead of the inconsistent wording "only partly supports". Evidence criteria were added to the vocabulary. Tests check both code lists against the schema, methodology and vocabulary.
+- `SKILL.cs.md`: informative Czech translation of `SKILL.md`; the English version prevails in case of conflict.
+- `SKILL.md` description lists example trigger phrases in Czech; a new rule asks for the summary and free-text fields in the user's language (codes and quotes unchanged).
+
+## [0.1.0] - 2026-11-10
+
 ### Added
 
 - `source-trust-assessment` skill: workflow and rules in `SKILL.md`.
@@ -12,7 +24,3 @@ All notable changes to the skill and its methodology. The methodology version is
 - `assessment.schema.json`, template and SKOS vocabulary.
 - `validate_assessment.py` validator (standard library only) with tests.
 - ADR-001 (Admiralty Code instead of a weighted score), ADR-002 (core and profiles, repository layout).
-
-### Changed
-
-- `SKILL.md` description lists example trigger phrases in Czech; a new rule asks for the summary and free-text fields in the user's language (codes and quotes unchanged).

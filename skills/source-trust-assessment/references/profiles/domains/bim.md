@@ -1,6 +1,6 @@
 # Domain profile `bim` – Building Information Modelling
 
-Profile for the [methodology](../../methodology.md) version 0.1.0. Status: **draft** – the institution lists below must be reviewed by domain experts before release.
+Profile for the [methodology](../../methodology.md) version 0.1.1. Status: **draft** – the institution lists below must be reviewed by domain experts before release.
 
 Use together with a region profile: `"context": { "region": "cz", "domain": "bim" }`.
 

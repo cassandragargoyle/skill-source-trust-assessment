@@ -1,6 +1,6 @@
 # Profile `eu` – European Union
 
-Profile for the [methodology](../../methodology.md) version 0.1.0 covering EU law and EU institutions. Shared by all member-state profiles (e.g. [`cz`](cz.md)). It does not change any code.
+Profile for the [methodology](../../methodology.md) version 0.1.1 covering EU law and EU institutions. Shared by all member-state profiles (e.g. [`cz`](cz.md)). It does not change any code.
 
 ## Legal authority (`legalAuthority`) for EU law
 

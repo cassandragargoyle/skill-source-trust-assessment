@@ -21,7 +21,7 @@ A fork that changes the methodology must not present its results as assessments 
 ```json
 "methodology": {
   "id": "source-trust-assessment",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": "<your-account>/skill-source-trust-assessment",
   "commit": "<commit>",
   "modified": true,

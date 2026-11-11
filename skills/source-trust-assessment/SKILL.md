@@ -12,8 +12,8 @@ description: >
 license: MIT
 metadata:
   author: CassandraGargoyle
-  version: "0.1.0"
-  methodology-version: "0.1.0"
+  version: "0.1.1"
+  methodology-version: "0.1.1"
 ---
 
 # Source Trust Assessment
@@ -31,7 +31,7 @@ Assess a source, a document or a claim and return a structured, reproducible res
 1. **Identify the subject and level.** Is it a publisher (organisation), a document, or a single claim? Record title, URL and retrieval date.
 2. **Select profiles.** Region (e.g. `cz`), the shared `eu` profile when EU law is involved, and a domain (e.g. `bim`). Read the matching files in [references/profiles/](references/profiles/). If no profile fits, use the methodology alone and say so.
 3. **Find the original.** Trace republished content to its originator (`derivedFrom`). For legal acts, locate the official version named in the region profile.
-4. **Collect evidence.** For every finding store the URL, a verbatim quote and whether it confirms, contradicts or only partly supports the subject.
+4. **Collect evidence.** For every finding store the URL, a verbatim quote and its `relation` to the subject: `confirms`, `partially-confirms`, `contradicts` or `context` (methodology § 4).
 5. **Check the criteria.** Authority, authenticity, currency, accuracy, independence, traceability, relevance (methodology § 4). Record findings, not scores.
 6. **Assign the codes.** `sourceReliability` A–F and `informationCredibility` 1–6, then `legalAuthority` and `legalStatus`. F and 6 mean *unknown*, not *worst*.
 7. **Record provenance.** `assessedBy` is `ai` unless a human reviewed the result; `verificationStatus` stays `unverified` for AI-only assessments.
