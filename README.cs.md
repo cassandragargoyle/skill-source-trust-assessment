@@ -89,7 +89,7 @@ python skills/source-trust-assessment/scripts/validate_assessment.py result.json
 
 ## Standard Agent Skills
 
-Skill vychází z otevřeného standardu [Agent Skills](https://agentskills.io/) a jeho [specifikace](https://agentskills.io/specification). Snažíme se s ním být v souladu a respektujeme jeho konvence: skill je adresář se souborem `SKILL.md`, jehož `name` ve frontmatteru odpovídá názvu adresáře, doplňující údaje patří do `metadata` a delší podklady jsou v `references/`, `assets/` a `scripts/`, odkud se načítají jen v případě potřeby. Vše, co jde nad rámec standardu, například manifest pluginu pro Claude Code v `.claude-plugin/`, je volitelné a leží mimo adresář skillu. Pokud najdeš odchylku od specifikace, [založ prosím issue](https://github.com/CassandraGargoyle/skill-source-trust-assessment/issues).
+Skill vychází z otevřeného standardu [Agent Skills](https://agentskills.io/) a jeho [specifikace](https://agentskills.io/specification). Snažíme se s ním být v souladu a respektujeme jeho konvence: skill je adresář se souborem `SKILL.md`, jehož `name` ve frontmatteru odpovídá názvu adresáře, doplňující údaje patří do `metadata` a delší podklady jsou v `references/`, `assets/` a `scripts/`, odkud se načítají jen v případě potřeby. Adresář skillu navíc obsahuje manifest pluginu pro Claude Code (`.claude-plugin/`) a krátké README, aby se dal instalovat jako plugin; agenti, kteří je nepoužívají, je ignorují. Pokud najdeš odchylku od specifikace, [založ prosím issue](https://github.com/CassandraGargoyle/skill-source-trust-assessment/issues).
 
 ## Struktura
 

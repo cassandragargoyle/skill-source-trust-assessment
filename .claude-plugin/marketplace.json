@@ -10,7 +10,7 @@
   "plugins": [
     {
       "name": "source-trust-assessment",
-      "source": "./",
+      "source": "./skills/source-trust-assessment",
       "description": "Evidence-based assessment of the trustworthiness of publishers, documents and claims, with region and domain profiles.",
       "category": "research"
     }

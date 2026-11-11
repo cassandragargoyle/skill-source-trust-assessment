@@ -9,5 +9,13 @@
   "homepage": "https://github.com/CassandraGargoyle/skill-source-trust-assessment",
   "repository": "https://github.com/CassandraGargoyle/skill-source-trust-assessment",
   "license": "MIT",
-  "keywords": ["agent-skills", "source-verification", "fact-checking", "admiralty-code", "legal", "bim"]
+  "keywords": [
+    "agent-skills",
+    "source-verification",
+    "fact-checking",
+    "admiralty-code",
+    "legal",
+    "bim"
+  ],
+  "icon": "./.claude-plugin/icon.png"
 }

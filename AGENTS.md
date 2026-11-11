@@ -20,6 +20,8 @@ The methodology originates in the BIM legal knowledge model project, where it wa
 
 - `/skills/source-trust-assessment/` - **The distributed skill.** Only this directory is installed into user projects; keep it free of research notes, tests and CI files
   - `SKILL.md` - frontmatter (name must equal the directory name) and the agent workflow
+  - `SKILL.cs.md` - informative Czech translation; the English version prevails
+  - `README.md` and `.claude-plugin/` - plugin listing text, manifest and icon; the folder is the Claude Code plugin submitted to the directory. Do not refer to the icon by path in Markdown or code here
   - `references/methodology.md` - normative methodology, English, versioned
   - `references/profiles/regions/` - region profiles in the language of the region (`cz.md` Czech, `eu.md` English)
   - `references/profiles/domains/` - domain profiles (`bim.md`)

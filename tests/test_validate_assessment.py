@@ -109,12 +109,12 @@ class ConsistencyTests(unittest.TestCase):
         translation = (SKILL / "SKILL.cs.md").read_text(encoding="utf-8")
         self.assertIn(f'\nversion: "{version}"', translation)
         self.assertIn(f'\nmethodology-version: "{methodology}"', translation)
-        plugin_dir = SKILL.parent.parent / ".claude-plugin"
-        plugin = json.loads((plugin_dir / "plugin.json").read_text(encoding="utf-8"))
+        plugin = json.loads((SKILL / ".claude-plugin" / "plugin.json").read_text(encoding="utf-8"))
         self.assertEqual(plugin["version"], version)
         self.assertEqual(plugin["name"], SKILL.name)
-        marketplace = json.loads((plugin_dir / "marketplace.json").read_text(encoding="utf-8"))
-        self.assertIn(SKILL.name, [p["name"] for p in marketplace["plugins"]])
+        marketplace = json.loads((SKILL.parent.parent / ".claude-plugin" / "marketplace.json").read_text(encoding="utf-8"))
+        entry = next(p for p in marketplace["plugins"] if p["name"] == SKILL.name)
+        self.assertEqual(entry["source"], "./skills/" + SKILL.name)
 
     def test_skill_name_matches_directory(self):
         skill_md = (SKILL / "SKILL.md").read_text(encoding="utf-8")

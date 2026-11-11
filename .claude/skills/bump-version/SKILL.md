@@ -65,7 +65,7 @@ Zobraz aktuální a navrhovanou verzi (skill i metodiku) a seznam souborů, kter
 
 1. `skills/source-trust-assessment/SKILL.md` → `metadata.version`
 2. `skills/source-trust-assessment/SKILL.cs.md` → `version` ve frontmatteru (a zkontroluj, že překlad odpovídá aktuálnímu `SKILL.md`)
-3. `.claude-plugin/plugin.json` → `version`
+3. `skills/source-trust-assessment/.claude-plugin/plugin.json` → `version`
 
 Soulad hlídá test `test_distribution_versions_match`.
 

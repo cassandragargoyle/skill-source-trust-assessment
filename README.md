@@ -89,7 +89,7 @@ python skills/source-trust-assessment/scripts/validate_assessment.py result.json
 
 ## Agent Skills standard
 
-This skill follows the open [Agent Skills](https://agentskills.io/) standard and its [specification](https://agentskills.io/specification). We aim to stay compliant with it and respect its conventions: the skill is a directory with a `SKILL.md` whose frontmatter `name` matches the directory name, extra data goes into `metadata`, and longer material lives in `references/`, `assets/` and `scripts/`, loaded only when needed. Anything that goes beyond the standard, such as the Claude Code plugin manifest in `.claude-plugin/`, is optional and kept outside the skill directory. If you find a deviation from the specification, please [open an issue](https://github.com/CassandraGargoyle/skill-source-trust-assessment/issues).
+This skill follows the open [Agent Skills](https://agentskills.io/) standard and its [specification](https://agentskills.io/specification). We aim to stay compliant with it and respect its conventions: the skill is a directory with a `SKILL.md` whose frontmatter `name` matches the directory name, extra data goes into `metadata`, and longer material lives in `references/`, `assets/` and `scripts/`, loaded only when needed. The skill directory also holds a Claude Code plugin manifest (`.claude-plugin/`) and a short README, so that the directory can be installed as a plugin; agents that do not use them ignore them. If you find a deviation from the specification, please [open an issue](https://github.com/CassandraGargoyle/skill-source-trust-assessment/issues).
 
 ## Repository structure
 

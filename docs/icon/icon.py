@@ -10,7 +10,7 @@ The SVG declares a display size of 128 px (for the README), its drawing is 1024 
 
 Usage:
     python3 docs/icon/icon.py > docs/icon/icon.svg
-    magick -density 768 -background none docs/icon/icon.svg -depth 8 .claude-plugin/icon.png
+    magick -density 768 -background none docs/icon/icon.svg -depth 8 skills/source-trust-assessment/.claude-plugin/icon.png
 """
 
 from __future__ import annotations
