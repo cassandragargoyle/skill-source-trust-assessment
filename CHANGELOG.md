@@ -4,6 +4,10 @@ All notable changes to the skill and its methodology. The methodology version is
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-11-11
+
+Methodology 0.1.1 (unchanged).
+
 ### Added
 
 - Claude Code plugin and marketplace manifests (`.claude-plugin/`), so the skill installs with `/plugin install`.

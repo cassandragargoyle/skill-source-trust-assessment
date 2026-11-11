@@ -2,7 +2,7 @@
 translation-of: SKILL.md
 language: cs
 normative: false
-version: "0.1.1"
+version: "0.1.2"
 methodology-version: "0.1.1"
 note: >
   Informativní český překlad SKILL.md. Agent načítá pouze anglický SKILL.md.
