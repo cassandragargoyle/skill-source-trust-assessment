@@ -1,6 +1,6 @@
 # Source Trust Assessment
 
-<img src="docs/icon/icon.svg" alt="ikona source-trust-assessment" width="128" height="128">
+![ikona source-trust-assessment](docs/icon/icon.svg)
 
 *English: [README.md](README.md).*
 
@@ -79,6 +79,13 @@ python skills/source-trust-assessment/scripts/validate_assessment.py result.json
 | `cz` | regionální | čeština | použitelný |
 | `eu` | regionální | angličtina | použitelný |
 | `bim` | oborový | angličtina | **návrh** – seznamy institucí čekají na kontrolu odborníky z oboru |
+
+## Data a soukromí
+
+- **Skill sám nikam data neposílá.** Tvoří ho pokyny, referenční soubory a jeden lokální skript. Nemá hooky, MCP servery ani procesy na pozadí a neinstaluje žádné balíčky.
+- **Zdroje stahuje agent.** Při hodnocení agent otevírá adresy, které mu zadáš, nebo je najde vyhledáváním na webu, a to svými vlastními nástroji a podle svého nastavení oprávnění. Skill agentovi zakazuje obcházet přihlášení nebo ochranu proti botům.
+- **Validátor běží lokálně.** `scripts/validate_assessment.py` používá jen standardní knihovnu Pythonu, čte soubor JSON, který mu předáš, a nepřistupuje k síti.
+- **Skill nic neukládá.** Hodnocení zůstane v konverzaci, případně v souboru, pokud ho ty nebo agent uložíte. Skill nežádá žádné osobní údaje.
 
 ## Standard Agent Skills
 

@@ -1,6 +1,6 @@
 # Source Trust Assessment
 
-<img src="docs/icon/icon.svg" alt="source-trust-assessment icon" width="128" height="128">
+![source-trust-assessment icon](docs/icon/icon.svg)
 
 *Česky: [README.cs.md](README.cs.md).*
 
@@ -79,6 +79,13 @@ python skills/source-trust-assessment/scripts/validate_assessment.py result.json
 | `cz` | region | Czech | usable |
 | `eu` | region | English | usable |
 | `bim` | domain | English | **draft** – institution lists await review by domain experts |
+
+## Data and privacy
+
+- **The skill sends no data anywhere by itself.** It consists of instructions, reference files and one local script. It has no hooks, no MCP servers and no background processes, and it does not install packages.
+- **Sources are fetched by the agent.** To assess a source, the agent opens the URLs you give it, or finds them with web search, using its own tools and under its own permission settings. The skill tells the agent not to bypass login walls or bot protection.
+- **The validator runs locally.** `scripts/validate_assessment.py` uses only the Python standard library, reads the JSON file you pass to it and makes no network requests.
+- **Nothing is stored by the skill.** The assessment stays in the conversation, or in a file if you or the agent save one. The skill does not ask for personal data.
 
 ## Agent Skills standard
 

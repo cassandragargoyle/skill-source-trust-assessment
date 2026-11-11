@@ -6,9 +6,11 @@ node green) around a green shield with a check mark: trust, established by sourc
 Sizes and colours follow the mark in the `api` repository (`brand/mark.py`); keep them
 in sync when the mark changes.
 
+The SVG declares a display size of 128 px (for the README), its drawing is 1024 units.
+
 Usage:
     python3 docs/icon/icon.py > docs/icon/icon.svg
-    magick -background none docs/icon/icon.svg -depth 8 .claude-plugin/icon.png
+    magick -density 768 -background none docs/icon/icon.svg -depth 8 .claude-plugin/icon.png
 """
 
 from __future__ import annotations
@@ -21,6 +23,7 @@ GREEN = "#76B900"
 GRAPHITE = "#1A1A1A"
 LIGHT = "#F2F2F2"
 SIZE = 1024
+DISPLAY_SIZE = 128  # width and height of the SVG in the README; 768 dpi renders 1024 px (ImageMagick reads SVG at 96 dpi)
 CENTRE = SIZE / 2
 NETWORK_RADIUS = 290
 NODE_RADIUS = 58
@@ -83,7 +86,7 @@ def icon() -> str:
     left = min(x for x, _ in nodes) - NODE_RADIUS
     right = max(max(x for x, _ in nodes) + NODE_RADIUS, CENTRE + 200)
     shift = CENTRE - (left + right) / 2
-    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {SIZE} {SIZE}" width="{SIZE}" height="{SIZE}" '
+    return (f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {SIZE} {SIZE}" width="{DISPLAY_SIZE}" height="{DISPLAY_SIZE}" '
             f'role="img" aria-label="source-trust-assessment">'
             f'<title>source-trust-assessment</title>'
             f'<rect width="{SIZE}" height="{SIZE}" rx="200" fill="{GRAPHITE}"/>'
