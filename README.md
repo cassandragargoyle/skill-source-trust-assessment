@@ -80,6 +80,10 @@ python skills/source-trust-assessment/scripts/validate_assessment.py result.json
 | `eu` | region | English | usable |
 | `bim` | domain | English | **draft** – institution lists await review by domain experts |
 
+## Agent Skills standard
+
+This skill follows the open [Agent Skills](https://agentskills.io/) standard and its [specification](https://agentskills.io/specification). We aim to stay compliant with it and respect its conventions: the skill is a directory with a `SKILL.md` whose frontmatter `name` matches the directory name, extra data goes into `metadata`, and longer material lives in `references/`, `assets/` and `scripts/`, loaded only when needed. Anything that goes beyond the standard, such as the Claude Code plugin manifest in `.claude-plugin/`, is optional and kept outside the skill directory. If you find a deviation from the specification, please [open an issue](https://github.com/CassandraGargoyle/skill-source-trust-assessment/issues).
+
 ## Repository structure
 
 Only `skills/source-trust-assessment/` is installed into user projects; everything else stays in the repository.

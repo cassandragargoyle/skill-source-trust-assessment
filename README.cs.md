@@ -80,6 +80,10 @@ python skills/source-trust-assessment/scripts/validate_assessment.py result.json
 | `eu` | regionální | angličtina | použitelný |
 | `bim` | oborový | angličtina | **návrh** – seznamy institucí čekají na kontrolu odborníky z oboru |
 
+## Standard Agent Skills
+
+Skill vychází z otevřeného standardu [Agent Skills](https://agentskills.io/) a jeho [specifikace](https://agentskills.io/specification). Snažíme se s ním být v souladu a respektujeme jeho konvence: skill je adresář se souborem `SKILL.md`, jehož `name` ve frontmatteru odpovídá názvu adresáře, doplňující údaje patří do `metadata` a delší podklady jsou v `references/`, `assets/` a `scripts/`, odkud se načítají jen v případě potřeby. Vše, co jde nad rámec standardu, například manifest pluginu pro Claude Code v `.claude-plugin/`, je volitelné a leží mimo adresář skillu. Pokud najdeš odchylku od specifikace, [založ prosím issue](https://github.com/CassandraGargoyle/skill-source-trust-assessment/issues).
+
 ## Struktura
 
 Do projektů uživatelů se instaluje jen `skills/source-trust-assessment/`. Výzkum, testy a rozhodnutí zůstávají v repozitáři. Podrobně v [README.md](README.md#repository-structure).
