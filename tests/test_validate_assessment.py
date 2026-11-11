@@ -102,6 +102,20 @@ class ConsistencyTests(unittest.TestCase):
         self.assertIn(f"Version {version}", methodology)
         self.assertIn(f"assessment-{version}.json", SCHEMA["$id"])
 
+    def test_distribution_versions_match(self):
+        skill_md = (SKILL / "SKILL.md").read_text(encoding="utf-8")
+        version = re.search(r'^  version: "([^"]+)"', skill_md, re.M).group(1)
+        methodology = re.search(r'methodology-version: "([^"]+)"', skill_md).group(1)
+        translation = (SKILL / "SKILL.cs.md").read_text(encoding="utf-8")
+        self.assertIn(f'\nversion: "{version}"', translation)
+        self.assertIn(f'\nmethodology-version: "{methodology}"', translation)
+        plugin_dir = SKILL.parent.parent / ".claude-plugin"
+        plugin = json.loads((plugin_dir / "plugin.json").read_text(encoding="utf-8"))
+        self.assertEqual(plugin["version"], version)
+        self.assertEqual(plugin["name"], SKILL.name)
+        marketplace = json.loads((plugin_dir / "marketplace.json").read_text(encoding="utf-8"))
+        self.assertIn(SKILL.name, [p["name"] for p in marketplace["plugins"]])
+
     def test_skill_name_matches_directory(self):
         skill_md = (SKILL / "SKILL.md").read_text(encoding="utf-8")
         name = re.search(r"^name: (\S+)$", skill_md, re.M).group(1)

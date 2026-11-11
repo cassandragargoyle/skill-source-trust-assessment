@@ -1,0 +1,13 @@
+{
+  "name": "source-trust-assessment",
+  "version": "0.1.1",
+  "description": "Evidence-based assessment of the trustworthiness of publishers, documents and claims (Admiralty Code A–F/1–6 plus legal authority and status), with region (cz, eu) and domain (bim) profiles.",
+  "author": {
+    "name": "CassandraGargoyle",
+    "url": "https://github.com/CassandraGargoyle"
+  },
+  "homepage": "https://github.com/CassandraGargoyle/skill-source-trust-assessment",
+  "repository": "https://github.com/CassandraGargoyle/skill-source-trust-assessment",
+  "license": "MIT",
+  "keywords": ["agent-skills", "source-verification", "fact-checking", "admiralty-code", "legal", "bim"]
+}

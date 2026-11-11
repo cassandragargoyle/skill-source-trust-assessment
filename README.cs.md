@@ -21,11 +21,34 @@ Jak se kódy použijí v určité zemi nebo oboru, určují **profily**: region�
 
 ## Instalace
 
+V produkci používej konkrétní vydanou verzi, aby se metodika neměnila bez tvého vědomí. Vydání jsou na stránce [Releases](https://github.com/CassandraGargoyle/skill-source-trust-assessment/releases).
+
+### Libovolný agent (Claude Code, Codex, Cursor, …)
+
 ```bash
 npx skills add CassandraGargoyle/skill-source-trust-assessment
 ```
 
-Nebo zkopíruj `skills/source-trust-assessment/` do `.claude/skills/` (Claude Code) nebo `.agents/skills/` (Codex) svého projektu. V produkci používej konkrétní vydanou verzi, aby se metodika neměnila bez tvého vědomí.
+### Plugin pro Claude Code
+
+```text
+/plugin install source-trust-assessment --marketplace cassandragargoyle/skill-source-trust-assessment
+```
+
+Ve starších verzích Claude Code nejdřív přidej marketplace:
+
+```text
+/plugin marketplace add CassandraGargoyle/skill-source-trust-assessment
+/plugin install source-trust-assessment@cassandragargoyle
+```
+
+### Claude.ai a Claude Desktop
+
+Stáhni `source-trust-assessment-<verze>.zip` z [posledního vydání](https://github.com/CassandraGargoyle/skill-source-trust-assessment/releases/latest) a nahraj ho v *Settings → Capabilities → Skills*.
+
+### Ruční kopie
+
+Zkopíruj `skills/source-trust-assessment/` do `.claude/skills/` (Claude Code) nebo `.agents/skills/` (Codex) svého projektu. Český překlad pokynů pro agenta je v [SKILL.cs.md](skills/source-trust-assessment/SKILL.cs.md) (informativní, platí anglická verze).
 
 ## Použití
 
@@ -40,6 +63,20 @@ Agent vrátí JSON podle [assessment.schema.json](skills/source-trust-assessment
 ```bash
 python skills/source-trust-assessment/scripts/validate_assessment.py result.json
 ```
+
+## Omezení
+
+- **Nejde o právní radu.** Výsledek je strukturovaný, důkazy podložený názor na to, nakolik se lze na zdroj spolehnout, ne právní stanovisko. Než podle zjištěné povinnosti začneš jednat, přečti si oficiální znění předpisu nebo se obrať na odborníka.
+- **Hodnocení od AI je neověřené.** Hodnocení, které provedl jen AI agent, má vždy `verificationStatus: "unverified"`. Stav `verified` získá až po kontrole odborníkem (metodika § 5).
+- **Agenti chybují.** Zkontroluj citace a URL v `evidence`; zdroje, které nešlo získat, jsou uvedené v `unresolved`.
+
+### Stav profilů
+
+| Profil | Typ | Jazyk | Stav |
+| ------ | --- | ----- | ---- |
+| `cz` | regionální | čeština | použitelný |
+| `eu` | regionální | angličtina | použitelný |
+| `bim` | oborový | angličtina | **návrh** – seznamy institucí čekají na kontrolu odborníky z oboru |
 
 ## Struktura
 

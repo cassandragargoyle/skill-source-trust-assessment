@@ -1,0 +1,66 @@
+name: release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing tag to (re)build the release for, e.g. v0.1.1
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      TAG: ${{ github.event.inputs.tag || github.ref_name }}
+      GH_TOKEN: ${{ github.token }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.TAG }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Check tag matches skill version
+        run: |
+          version=$(sed -n 's/^  version: "\(.*\)"/\1/p' skills/source-trust-assessment/SKILL.md)
+          test "v$version" = "$TAG" || { echo "Tag $TAG does not match SKILL.md version $version"; exit 1; }
+
+      - name: Build skill ZIP
+        run: |
+          version="${TAG#v}"
+          git archive --format=zip --prefix=source-trust-assessment/ \
+            -o "source-trust-assessment-$version.zip" "$TAG:skills/source-trust-assessment"
+          unzip -l "source-trust-assessment-$version.zip"
+
+      - name: Extract release notes from CHANGELOG
+        run: |
+          version="${TAG#v}"
+          awk -v v="$version" '
+            $0 ~ "^## \\[" v "\\]" { on = 1; next }
+            on && /^## \[/ { exit }
+            on { print }
+          ' CHANGELOG.md > notes.md
+          test -s notes.md || { echo "No CHANGELOG section for $version"; exit 1; }
+
+      - name: Create or update GitHub release
+        run: |
+          version="${TAG#v}"
+          if gh release view "$TAG" > /dev/null 2>&1; then
+            gh release upload "$TAG" "source-trust-assessment-$version.zip" --clobber
+            gh release edit "$TAG" --notes-file notes.md
+          else
+            gh release create "$TAG" "source-trust-assessment-$version.zip" \
+              --title "source-trust-assessment $version" --notes-file notes.md
+          fi

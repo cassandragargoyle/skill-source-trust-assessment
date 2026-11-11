@@ -21,11 +21,34 @@ How the codes apply in a jurisdiction or a field is defined by **profiles**: reg
 
 ## Install
 
+Pin a released version for production use, so the methodology does not change underneath you. Releases are listed on the [Releases page](https://github.com/CassandraGargoyle/skill-source-trust-assessment/releases).
+
+### Any agent (Claude Code, Codex, Cursor, …)
+
 ```bash
 npx skills add CassandraGargoyle/skill-source-trust-assessment
 ```
 
-Or copy `skills/source-trust-assessment/` into `.claude/skills/` (Claude Code) or `.agents/skills/` (Codex) of your project. Pin a released version for production use, so the methodology does not change underneath you.
+### Claude Code plugin
+
+```text
+/plugin install source-trust-assessment --marketplace cassandragargoyle/skill-source-trust-assessment
+```
+
+On older Claude Code versions add the marketplace first:
+
+```text
+/plugin marketplace add CassandraGargoyle/skill-source-trust-assessment
+/plugin install source-trust-assessment@cassandragargoyle
+```
+
+### Claude.ai and Claude Desktop
+
+Download `source-trust-assessment-<version>.zip` from the [latest release](https://github.com/CassandraGargoyle/skill-source-trust-assessment/releases/latest) and upload it under *Settings → Capabilities → Skills*.
+
+### Manual copy
+
+Copy `skills/source-trust-assessment/` into `.claude/skills/` (Claude Code) or `.agents/skills/` (Codex) of your project.
 
 ## Use
 
@@ -40,6 +63,20 @@ The agent returns JSON following [assessment.schema.json](skills/source-trust-as
 ```bash
 python skills/source-trust-assessment/scripts/validate_assessment.py result.json
 ```
+
+## Limitations
+
+- **Not legal advice.** The result is a structured, evidence-based opinion on how far a source can be relied on, not a legal opinion. Before acting on an obligation, read the official version of the legal act or ask a qualified professional.
+- **AI assessments are unverified.** An assessment made by an AI agent alone always has `verificationStatus: "unverified"`. It becomes `verified` only after review by an expert (methodology § 5).
+- **Agents make mistakes.** Check the quotes and URLs in `evidence`; sources that could not be retrieved are listed in `unresolved`.
+
+### Profile status
+
+| Profile | Type | Language | Status |
+| ------- | ---- | -------- | ------ |
+| `cz` | region | Czech | usable |
+| `eu` | region | English | usable |
+| `bim` | domain | English | **draft** – institution lists await review by domain experts |
 
 ## Repository structure
 

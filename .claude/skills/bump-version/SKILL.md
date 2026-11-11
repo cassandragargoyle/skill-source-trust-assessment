@@ -64,10 +64,14 @@ Zobraz aktuální a navrhovanou verzi (skill i metodiku) a seznam souborů, kter
 ### Verze skillu
 
 1. `skills/source-trust-assessment/SKILL.md` → `metadata.version`
+2. `skills/source-trust-assessment/SKILL.cs.md` → `version` ve frontmatteru (a zkontroluj, že překlad odpovídá aktuálnímu `SKILL.md`)
+3. `.claude-plugin/plugin.json` → `version`
+
+Soulad hlídá test `test_distribution_versions_match`.
 
 ### Verze metodiky (jen pokud se mění)
 
-1. `skills/source-trust-assessment/SKILL.md` → `metadata.methodology-version`
+1. `skills/source-trust-assessment/SKILL.md` → `metadata.methodology-version` a `SKILL.cs.md` → `methodology-version`
 2. `skills/source-trust-assessment/references/methodology.md` → hlavička `Version X.Y.Z · …`
 3. `skills/source-trust-assessment/assets/assessment.schema.json` → `$id` (`…/schemas/assessment-X.Y.Z.json`) a `description` (`… methodology X.Y.Z.`)
 4. `skills/source-trust-assessment/assets/assessment.template.json` → `methodology.version`
@@ -105,3 +109,5 @@ Tests: OK
 ```
 
 Navrhni commit (`chore: Bump version to X.Y.W`) a případný tag `vX.Y.W` — tag vytvoř až po potvrzení uživatelem.
+
+Push tagu `vX.Y.W` spustí workflow `.github/workflows/release.yml`: ověří, že tag odpovídá verzi v `SKILL.md`, sestaví `source-trust-assessment-X.Y.W.zip` (jen adresář skillu) a založí GitHub Release s poznámkami z odpovídající sekce `CHANGELOG.md`. Sekce `## [X.Y.W]` proto musí v CHANGELOG existovat dřív, než tag pushneš.
