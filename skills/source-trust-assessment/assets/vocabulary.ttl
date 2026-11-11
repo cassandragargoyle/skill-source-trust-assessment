@@ -107,6 +107,42 @@ sta:status-repealed a skos:Concept ; skos:inScheme sta:legalStatusScheme ; skos:
 sta:status-n-a a skos:Concept ; skos:inScheme sta:legalStatusScheme ; skos:notation "n/a" ;
     skos:prefLabel "not a legal act"@en, "nejde o předpis"@cs .
 
+# --------------------------------------------------------------------------- evidence criteria
+
+sta:criterionScheme a skos:ConceptScheme ;
+    skos:prefLabel "Evidence criteria"@en, "Kritéria důkazů"@cs .
+
+sta:crit-authority a skos:Concept ; skos:inScheme sta:criterionScheme ; skos:notation "authority" ;
+    skos:prefLabel "authority"@en, "autorita"@cs .
+sta:crit-authenticity a skos:Concept ; skos:inScheme sta:criterionScheme ; skos:notation "authenticity" ;
+    skos:prefLabel "authenticity"@en, "pravost"@cs .
+sta:crit-currency a skos:Concept ; skos:inScheme sta:criterionScheme ; skos:notation "currency" ;
+    skos:prefLabel "currency"@en, "aktuálnost"@cs .
+sta:crit-accuracy a skos:Concept ; skos:inScheme sta:criterionScheme ; skos:notation "accuracy" ;
+    skos:prefLabel "accuracy"@en, "přesnost"@cs .
+sta:crit-independence a skos:Concept ; skos:inScheme sta:criterionScheme ; skos:notation "independence" ;
+    skos:prefLabel "independence"@en, "nezávislost"@cs .
+sta:crit-traceability a skos:Concept ; skos:inScheme sta:criterionScheme ; skos:notation "traceability" ;
+    skos:prefLabel "traceability"@en, "dohledatelnost"@cs .
+sta:crit-relevance a skos:Concept ; skos:inScheme sta:criterionScheme ; skos:notation "relevance" ;
+    skos:prefLabel "relevance"@en, "relevance"@cs ;
+    skos:scopeNote "Context of the assessment, not trust itself."@en .
+
+# --------------------------------------------------------------------------- evidence relation
+
+sta:evidenceRelationScheme a skos:ConceptScheme ;
+    skos:prefLabel "Evidence relation"@en, "Vztah důkazu"@cs .
+
+sta:relation-confirms a skos:Concept ; skos:inScheme sta:evidenceRelationScheme ; skos:notation "confirms" ;
+    skos:prefLabel "confirms"@en, "potvrzuje"@cs .
+sta:relation-partially-confirms a skos:Concept ; skos:inScheme sta:evidenceRelationScheme ; skos:notation "partially-confirms" ;
+    skos:prefLabel "partially confirms"@en, "částečně potvrzuje"@cs .
+sta:relation-contradicts a skos:Concept ; skos:inScheme sta:evidenceRelationScheme ; skos:notation "contradicts" ;
+    skos:prefLabel "contradicts"@en, "vyvrací"@cs .
+sta:relation-context a skos:Concept ; skos:inScheme sta:evidenceRelationScheme ; skos:notation "context" ;
+    skos:prefLabel "context"@en, "kontext"@cs ;
+    skos:scopeNote "Neither confirms nor contradicts."@en .
+
 # --------------------------------------------------------------------------- verification status
 
 sta:verificationStatusScheme a skos:ConceptScheme ;

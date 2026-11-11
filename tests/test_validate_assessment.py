@@ -75,12 +75,25 @@ class ConsistencyTests(unittest.TestCase):
             for code in trust[field]["enum"]:
                 with self.subTest(field=field, code=code):
                     self.assertIn(str(code), notations)
+        for field, codes in self.item_codes().items():
+            for code in codes:
+                with self.subTest(field=field, code=code):
+                    self.assertIn(code, notations)
 
     def test_codes_in_methodology(self):
         text = (SKILL / "references" / "methodology.md").read_text(encoding="utf-8")
-        for code in SCHEMA["properties"]["trust"]["properties"]["legalAuthority"]["enum"]:
-            with self.subTest(code=code):
-                self.assertIn(f"`{code}`", text)
+        codes = {"legalAuthority": SCHEMA["properties"]["trust"]["properties"]["legalAuthority"]["enum"],
+                 **self.item_codes()}
+        for field, values in codes.items():
+            for code in values:
+                with self.subTest(field=field, code=code):
+                    self.assertIn(f"`{code}`", text)
+
+    @staticmethod
+    def item_codes() -> dict[str, list[str]]:
+        props = SCHEMA["properties"]
+        return {"evidence.relation": props["evidence"]["items"]["properties"]["relation"]["enum"],
+                "criteria.criterion": props["criteria"]["items"]["properties"]["criterion"]["enum"]}
 
     def test_versions_match(self):
         skill_md = (SKILL / "SKILL.md").read_text(encoding="utf-8")
