@@ -123,7 +123,7 @@ Zeptej se uživatele: "Je tímto issue kompletně dokončeno?"
 
 Uprav soubor issue v `docs/issues/`:
 
-- Změň `**Status:** 📋 Open` na `**Status:** ✅ Implemented`
+- Změň `**Status**: Open` na `**Status**: Implemented` (bez emoji)
 - Přidej datum uzavření
 
 Přesuň soubor do archivu a uzavři GitHub issue (README tabulky neexistují — seznam je na GitHubu):

@@ -35,7 +35,7 @@ issue name or ID and wait for my answer.
 ## STEP 2: Claim the issue (status + assignee check)
 
 Before doing any work, verify the issue is free to work on. **GitHub is the single
-source of truth for status and assignee** (see `docs/issues/README.md`).
+source of truth for status and assignee** (see `docs/contributing/ISSUE-MANAGEMENT.md`, section Assignment).
 
 The local file `docs/issues/NNN-*.md` is named after its **GitHub issue
 number** `NNN`. Use that number for all `gh` calls below.
@@ -216,4 +216,4 @@ After the implementation is committed, use `/finish-branch` to:
 - Run the tests and the consistency check
 - Merge the branch into the main branch
 - Delete the feature branch
-- Update the issue status to ✅ Implemented and archive it into `docs/issues/done/`
+- Update the issue status to Implemented and archive it into `docs/issues/done/`

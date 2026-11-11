@@ -31,7 +31,7 @@ Z argumentu / kontextu (nebo přes `AskUserQuestion`, pokud chybí) zjisti:
 
 - **Titulek** — krátký, výstižný, anglicky (bez čísla; GitHub ho doplní sám)
 - **Slug** — kebab-case pro název souboru (odvoď z titulku, např. `region-profile-sk`)
-- **Typ**: Feature | Enhancement | Bug Fix | Methodology | Profile | Docs
+- **Typ**: Feature | Enhancement | Bug Fix | Methodology | Profile | Docs | Task
 - **Priorita**: Critical | High | Medium | Low
 - **Komponenta** — podle části repozitáře:
   - `skill` — workflow v `SKILL.md`
@@ -40,6 +40,7 @@ Z argumentu / kontextu (nebo přes `AskUserQuestion`, pokud chybí) zjisti:
   - `schema` — `assets/assessment.schema.json`, šablona, `vocabulary.ttl`
   - `validator` — `scripts/validate_assessment.py` a testy
   - `docs` — README, ADR, CONTRIBUTING, FORKING
+  - `build-infra` — CI, nástroje repozitáře, `.claude/`
 - **Krátký popis** (1–3 věty) — půjde do těla GitHub issue
 - **Detailní obsah** — půjde do lokálního `.md` (problém, kroky, akceptační kritéria, testy)
 
@@ -87,7 +88,7 @@ Vytvoř `docs/issues/<NNN>-<slug>.md` s plným obsahem. Doporučená kostra:
 ## Summary
 <1–3 věty>
 
-**Status**: 📋 Open
+**Status**: Open
 **Priority**: <priorita>
 **Component**: <komponenta>
 **Created**: <YYYY-MM-DD>

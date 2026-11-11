@@ -129,7 +129,7 @@ Ask the user: "Is the issue completely finished by this?"
 
 Edit the issue file in `docs/issues/`:
 
-- Change `**Status:** 📋 Open` to `**Status:** ✅ Implemented`
+- Change `**Status**: Open` to `**Status**: Implemented` (no emoji)
 - Add the closing date
 
 Move the file to the archive and close the GitHub issue (there are no README tables — the list lives on GitHub):
