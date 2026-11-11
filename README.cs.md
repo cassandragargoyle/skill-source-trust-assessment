@@ -1,5 +1,7 @@
 # Source Trust Assessment
 
+<img src="docs/icon/icon.svg" alt="ikona source-trust-assessment" width="128" height="128">
+
 *English: [README.md](README.md).*
 
 ## Přehled

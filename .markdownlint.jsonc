@@ -14,6 +14,10 @@
   "MD029": {
     "style": "ordered"
   },
+  // Inline HTML only for images that need a fixed size (the icon in README)
+  "MD033": {
+    "allowed_elements": ["img"]
+  },
   // Allow hard tabs inside code blocks (Java/Go code style uses tabs)
   "MD010": {
     "code_blocks": false

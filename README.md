@@ -1,5 +1,7 @@
 # Source Trust Assessment
 
+<img src="docs/icon/icon.svg" alt="source-trust-assessment icon" width="128" height="128">
+
 *Česky: [README.cs.md](README.cs.md).*
 
 ## Overview
