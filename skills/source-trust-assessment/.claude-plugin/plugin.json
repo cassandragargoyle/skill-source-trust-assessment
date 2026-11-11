@@ -17,5 +17,6 @@
     "legal",
     "bim"
   ],
-  "icon": "./.claude-plugin/icon.png"
+  "icon": "./.claude-plugin/icon.png",
+  "privacyPolicyUrl": "https://github.com/CassandraGargoyle/skill-source-trust-assessment/blob/main/PRIVACY.md"
 }

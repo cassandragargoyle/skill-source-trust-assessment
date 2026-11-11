@@ -46,6 +46,8 @@ Ask in any language, for example:
 - The validation script uses only the Python standard library, reads the JSON file you pass to it and makes no network requests.
 - Nothing is stored by the skill, and it does not ask for personal data.
 
+Full text: [Privacy policy](https://github.com/CassandraGargoyle/skill-source-trust-assessment/blob/main/PRIVACY.md).
+
 ## More
 
 Methodology, profiles, design decisions and contribution rules are in the [repository](https://github.com/CassandraGargoyle/skill-source-trust-assessment). Licence: MIT.

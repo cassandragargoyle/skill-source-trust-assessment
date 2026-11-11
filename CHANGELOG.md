@@ -4,6 +4,10 @@ All notable changes to the skill and its methodology. The methodology version is
 
 ## [Unreleased]
 
+### Added
+
+- `PRIVACY.md` privacy policy, linked from `plugin.json` (`privacyPolicyUrl`) and the plugin README.
+
 ### Changed
 
 - The Claude Code plugin is now the skill directory itself: `plugin.json`, the icon and a short listing `README.md` live in `skills/source-trust-assessment/`, and the marketplace points there. Users get only the skill, without tests, research or development files.
